@@ -1,81 +1,32 @@
 import "./singleChampion.css";
 import { useParams } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import Skins from "../skinsCorusel/skins";
+import PreviewSkills from "../previewSkils/previewSkills";
 import useChampionService from '../services/championsService'
 
 const SingleChampion = () => {
 
+  const { heroId } = useParams()
 
   const { getChampion } = useChampionService()
-  const [skillName, setskillName] = useState()
-  const [skillDesc, setskillDesc] = useState()
-  const [skillVideo, setskillVideo] = useState()
+  
   const [activeChampion, setactiveChampoion] = useState({})
-  const { name, img, role, description, skils, difficulty } = activeChampion
+  const { name, img, role, description, difficulty} = activeChampion
+
+
+ 
+
 
 
   const getActiveChampion = (champ) => {
     setactiveChampoion(champ);
   }
-
-
-
-
-
-
-
-  const { heroId } = useParams()
-
-
   useEffect(() => {
-    getChampion(heroId).then(res => { getActiveChampion(res);
-       setskillName(res.skils[0].name);
-        setskillDesc(res.skils[0].description);
-         setskillVideo(res.skils[0].video) });
-  }, []);
-
-  useEffect(() => {
-
-  })
+    getChampion(heroId).then(res => getActiveChampion(res));
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 
-
-
-  const itemRef = useRef([])
-  const focusOnItem = (id) => {
-    itemRef.current.forEach(item => item.classList.remove('active'));
-    itemRef.current[id].classList.add('active')
-    console.log(id);
-  }
-  const activeSkill = (key) => {
-    setskillName(skils[key].name)
-    setskillDesc(skils[key].description)
-    setskillVideo(skils[key].video)
-  }
-  const elem = activeChampion.skils && activeChampion.skils.map((item, i) => {
-
-    let active = ''
-    if (i == 0) {
-      active = "preview__img active"
-    } else {
-      active = "preview__img"
-    }
-    return (
-      <li className="preview__button " key={i} onClick={() => { activeSkill(i); focusOnItem(i) }}>
-        <button>
-          <div className={active} ref={el => itemRef.current[i] = el}>
-            <img className="" src={item.img} alt="" />
-          </div>
-          <div className="circle"></div>
-        </button>
-      </li>
-    )
-  })
-
-
-
-
-  
 
 
 
@@ -164,6 +115,7 @@ const SingleChampion = () => {
           <img
             className="champion__image"
             src={img}
+            alt="champion__image"
           />
 
           <div className="champion__blackout"></div>
@@ -200,8 +152,8 @@ const SingleChampion = () => {
             <div className="champion__footer">
               <p className="footer__title">CHAMPION MASTERY</p>
               <a href="https://www.op.gg/">OP.GG</a>
-              <a href="">U.GG</a>
-              <a href="">PROBUILDS.NET</a>
+              <a href="https://u.gg/">U.GG</a>
+              <a href="https://www.probuilds.net/">PROBUILDS.NET</a>
             </div>
           </div>
         </div>
@@ -209,34 +161,13 @@ const SingleChampion = () => {
 
       <div />
       <div className="abilities">
-
-        <div className="abilities__background">
-          <img src="" alt="" />
-        </div>
-
-        <div className="abilities__inner">
-          <div className="abilities__inner-preview">
-            <h2 className="preview__title">ABILITIES</h2>
-            <ul className="preview__list">
-              {elem}
-            </ul>
-
-            <div className="abilities__desc">
-              <span>PASSIVE</span>
-              <h2 className="abilities__name">{skillName}</h2>
-              <div>{skillDesc}</div>
-            </div>
-          </div>
-
-          <div className="abilities__inner-video">
-            <video muted autoPlay loop src={skillVideo} type="video/webm"></video>
-
-          </div>
-
-
-        </div>
+          {activeChampion.skils && <PreviewSkills skils={activeChampion.skils}/>}
+        
 
       </div>
+
+
+      {activeChampion.skins && <Skins champ={activeChampion.skins}/>}
     </div>
   );
 };

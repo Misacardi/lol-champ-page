@@ -1,0 +1,127 @@
+/* abilities */
+
+.abilities {
+    background-color: rgb(0, 9, 19);
+    height: 716px;
+  }
+  
+  .abilities__inner {
+    display: flex;
+    justify-content: center;
+    column-gap: 200px;
+    margin-left: 150px;
+  
+  }
+  
+  .abilities__background {
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .preview__list {
+    display: flex;
+    column-gap: 25px;
+  }
+  .preview__title {
+    color: #ffff;
+    font-size: 65px;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-weight: 700;
+    margin-left: 10px;
+  }
+  
+  .preview__button {
+    margin-top: 30px;
+    
+  }
+  
+  .preview__button:hover .circle {
+    transition: 300ms;
+    background-color: rgb(208, 168, 92);
+  }
+  
+  .active {
+    transition: 300ms;
+    border: 1.5px solid rgb(208, 168, 92);
+    transform: translateY(-15px);
+  }
+  
+  
+  .preview__button button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .preview__img {
+    transition: 300ms;
+    min-width: 70px;
+    min-height: 75px;
+    padding: 5px;
+  }
+  
+  
+  .preview__img button {
+    width: 60px;
+    height: 60px;
+  }
+  
+  
+  
+  .circle {
+    transition: 800ms;
+    width:9px;
+    height: 9px;
+    background-color: rgb(57, 64, 72);
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  
+  
+  
+  .abilities__desc {
+    color: #ffff;
+    max-width: 450px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  .abilities__desc span {
+    color: rgb(126, 126, 126);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    line-height: 1;
+  }
+  
+  
+  .abilities__desc h2 {
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  .abilities__desc div {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* video */
+
+.abilities__inner-video {
+    height: 440px;
+    width: 770px;
+    margin-top: 100px;
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+    outline-offset: -12px;
+  }
+  .abilities__inner-video video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  
+  }

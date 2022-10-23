@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 
 const HeroList = () => {
-    const filterButton = ['all', 'assasin', 'mage', 'tank'];
+    const filterButton = ['all', 'assasin', 'mage', 'tank', 'marksman'];
     const { request } = useHttp()
     const dispatch = useDispatch()
 
@@ -15,6 +15,7 @@ const HeroList = () => {
 
 
     const filterChampion = useSelector(state => {
+
         if (filterStatus === 'all') {
             return state.champions;
         } else {

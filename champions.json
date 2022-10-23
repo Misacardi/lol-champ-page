@@ -6,6 +6,24 @@
             "difficulty": "mid",
             "description": "Once honored defenders of Shurima against the Void, Aatrox and his brethren would eventually become an even greater threat to Runeterra, and were defeated only by cunning mortal sorcery. But after centuries of imprisonment, Aatrox was the first to find freedom once more, corrupting and transforming those foolish enough to try and wield the magical weapon that contained his essence. Now, with stolen flesh, he walks Runeterra in a brutal approximation of his previous form, seeking an apocalyptic and long overdue vengeance.",
             "role": "fighter",
+            "skins":[
+                {
+                    "name": "Aatrox",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
+                },
+                {
+                    "name": "Justicar Aatrox",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg"
+                },
+                {
+                    "name": "Mecha Aatrox",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_2.jpg"
+                },
+                {
+                    "name": "Sea Hunter Aatrox",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_3.jpg"
+                }
+            ],
             "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg",
             "skils": [
                 {
@@ -46,6 +64,24 @@
             "difficulty": "high",
             "description": "Abandoning the Kinkou Order and her title of the Fist of Shadow, Akali now strikes alone, ready to be the deadly weapon her people need. Though she holds onto all she learned from her master Shen, she has pledged to defend Ionia from its enemies, one kill at a time. Akali may strike in silence, but her message will be heard loud and clear: fear the assassin with no master.",
             "role": "assasin",
+            "skins":[
+                {
+                    "name": "Akali",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg"
+                },
+                {
+                    "name": "Stinger Akali",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_1.jpg"
+                },
+                {
+                    "name": "Infernal Akali",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_2.jpg"
+                },
+                {
+                    "name": "All-star Akali",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_3.jpg"
+                }
+            ],
             "img": "https://cdn.mobachampion.com/imgs/champion/highres/akali.jpg?strip=all",
             "skils": [
                 {
@@ -86,6 +122,24 @@
             "difficulty": "easy",
             "description": "Legend claims that Amumu is a lonely and melancholy soul from ancient Shurima, roaming the world in search of a friend. Doomed by an ancient curse to remain alone forever, his touch is death, his affection ruin. Those who claim to have seen him describe a living cadaver, small in stature and wrapped in creeping bandages. Amumu has inspired myths, songs, and folklore told and retold for generations—such that it is impossible to separate truth from fiction.",
             "role": "tank",
+            "skins":[
+                {
+                    "name": "Amumu",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg"
+                },
+                {
+                    "name": "Pharaoh Amumu",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_1.jpg"
+                },
+                {
+                    "name": "Vancouver Amumu",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_2.jpg"
+                },
+                {
+                    "name": "Emumu",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_3.jpg"
+                }
+            ],
             "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg",
             "skils": [
                 {
@@ -126,6 +180,24 @@
             "description": "Emerging from moonlight's shadow with weapons drawn, Aphelios  kills the enemies of his faith in brooding silence—speaking only through the certainty of his aim, and the firing of each gun. Though fueled by a poison that renders him mute, he is guided byhis sister Alune. From her distant temple sanctuary, she pushes an arsenal of moonstone weapons into his hands. For as long asthe moon shines overhead, Aphelios will never be alone.",
             "role": "marksman",
             "difficulty": "high",
+            "skins":[
+                {
+                    "name": "APHELIOS",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg"
+                },
+                {
+                    "name": "Nightbringer Aphelios",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_1.jpg"
+                },
+                {
+                    "name": "Lunar Beast Aphelios",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_9.jpg"
+                },
+                {
+                    "name": "EDG Aphelios",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_18.jpg"
+                }
+            ],
             "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg",
             "skils": [
                 {
@@ -166,6 +238,24 @@
             "difficulty": "high",
             "description": "Aurelion Sol once graced the vast emptiness of the cosmos with celestial wonders of his own devising. Now, he is forced to wield his awesome power at the behest of a space-faring empire that tricked him into servitude. Desiring a return to his star-forging ways, Aurelion Sol will drag the very stars from the sky, if he must, in order to regain his freedom.",
             "role": "mage",
+            "skins":[
+                {
+                    "name": "Aurelion Sol",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg"
+                },
+                {
+                    "name": "Ashen Lord Aurelion Sol",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_1.jpg"
+                },
+                {
+                    "name": "Mecha Aurelion Sol",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_2.jpg"
+                },
+                {
+                    "name": "Storm Dragon Aurelion Sol",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_11.jpg"
+                }
+            ],
             "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg",
             "skils": [
                 {
@@ -206,6 +296,24 @@
             "difficulty": "high",
             "description": "In Noxus, warriors known as Reckoners face one another in arenas where blood is spilled and strength tested—but none has ever been as celebrated as Draven. A former soldier, he found that the crowds uniquely appreciated his flair for the dramatic, and his unparalleled skill with his spinning axes. Addicted to the spectacle of his own brash perfection, Draven has sworn to defeat whomever he must to ensure that his name is chanted throughout the empire forever more.",
             "role": "marksman",
+            "skins":[
+                {
+                    "name": "Draven",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg"
+                },
+                {
+                    "name": "Soul Reaver Draven",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_1.jpg"
+                },
+                {
+                    "name": "Gladiator Draven",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_2.jpg"
+                },
+                {
+                    "name": "EPrimetime Draven",
+                    "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_3.jpg"
+                }
+            ],
             "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg",
             "skils": [
                 {
