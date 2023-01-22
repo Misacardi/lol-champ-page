@@ -10,9 +10,9 @@
 .champion__blackout {
   position: absolute;
   top: 550px;
-  height: 440px;
+  height: 505px;
   width: 100%;
-  background: rgba(0, 9, 19, .9);
+  background: rgba(0, 9, 19, 1);
   filter: blur(100px);
 }
 
@@ -35,6 +35,11 @@
   
 
 
+}
+
+
+.champion__image {
+ 
 }
 
 .champion__title {

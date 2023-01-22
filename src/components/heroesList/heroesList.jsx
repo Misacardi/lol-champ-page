@@ -27,8 +27,8 @@ const HeroList = () => {
     useEffect(() => {
         dispatch(championFetching())
         request('http://localhost:3001/champions')
-            .then(data => dispatch(championsFetched(data)))
-    }, [])
+            .then(data => dispatch(championsFetched(data))) // eslint-disable-next-line
+    }, []) 
 
 
 

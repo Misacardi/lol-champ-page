@@ -1,17 +1,11 @@
-.skins__inner {
-    display: flex;
-    justify-content: center;
-}
 
 .skins__image {
     position: relative;
-    width: 97.5rem;
-
 }
 .skins {
-    padding: 80px;
-    height: 1080px;
-    
+  
+    max-width: 1560px;
+    margin: 80px auto;
 }
 
 .skins__img {
@@ -26,6 +20,8 @@
     width: 31%;
     background-color: rgba(0, 0, 0, .5);
     top: 0;
+    
+
 }
 
 
@@ -53,14 +49,17 @@
 
 .carousel {
     overflow: hidden;
+
+    margin-left: 50px;
+    height: 65vh;
 }
 .carousel__inner {
-    position: relative;
-    top: 2px;
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
-    margin-top: 110px;
+    transition: 400ms;
+    padding-top: 150px;
+    
+    
 }
 
 .carousel__item{

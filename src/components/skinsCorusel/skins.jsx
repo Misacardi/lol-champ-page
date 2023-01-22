@@ -7,14 +7,19 @@ const Skins = ({champ}) => {
     const [skinsImg, setSkins] = useState(champ[0].img)
     const skinsRef = useRef([])
     const carouselRef = useRef()
+    const [offset, setOffset] = useState(0);
+    let heigth = 100;
 
-    // let offset = 0;
+   
 
     
     
   const focusOnItem = (id) => {
     skinsRef.current.forEach(item => item.classList.remove('carousel-active'));
     skinsRef.current[id].classList.add('carousel-active')
+    setOffset((heigth) * ((id + 1) - 1))
+    console.log(offset)
+    console.log(skinsRef);
   }
 
 
@@ -24,15 +29,10 @@ const Skins = ({champ}) => {
   }
 
 
-//   const move = () => {
 
-//     offset = offset + 10
-//     carouselRef.current.style.top = offset + "px";
-//     console.log(offset);
-//   }
     
 
-    const skinsButton = champ && champ.map((item,i) => {
+    const skinsButton = champ.map((item,i) => { 
 
      
         let active = i ? "carousel__item": "carousel__item carousel-active"
@@ -45,6 +45,8 @@ const Skins = ({champ}) => {
         )
             
     })
+
+ 
 
     return (
         <>
@@ -60,8 +62,8 @@ const Skins = ({champ}) => {
 
 
                                 <div className="carousel">
-                                    <ul className="carousel__inner" ref={el => carouselRef.current = el}>
-                                        {skinsButton}
+                                    <ul className="carousel__inner" style={{ transform: `translateY(-${offset}px)`}} ref={el => carouselRef.current = el}>
+                                    {skinsButton}
                                     </ul>
 
                                 </div>
