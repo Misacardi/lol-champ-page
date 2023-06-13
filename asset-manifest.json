@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/League-of-Legends-Champions-page-react-redux-router/static/css/main.c746f7dc.css",
+    "main.js": "/League-of-Legends-Champions-page-react-redux-router/static/js/main.bc350901.js",
+    "index.html": "/League-of-Legends-Champions-page-react-redux-router/index.html",
+    "main.c746f7dc.css.map": "/League-of-Legends-Champions-page-react-redux-router/static/css/main.c746f7dc.css.map",
+    "main.bc350901.js.map": "/League-of-Legends-Champions-page-react-redux-router/static/js/main.bc350901.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c746f7dc.css",
+    "static/js/main.bc350901.js"
+  ]
+}
