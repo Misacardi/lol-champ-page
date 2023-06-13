@@ -1,57 +1,46 @@
 :root {
-    --neutural-900: hsl(207, 19%, 9%);
-    --neutural-100: hsl(0, 0%, 100%);
-    --neutural-400: rgb(11, 196, 226);
-  }
-
-  
-
-.banner {
-    padding-top: 100px;
-    
+  --neutural-900: hsl(207, 19%, 9%);
+  --neutural-100: hsl(0, 0%, 100%);
+  --neutural-400: rgb(11, 196, 226);
 }
 
-
+.banner {
+  padding-top: 100px;
+}
 
 .banner__title span {
-    font-weight: 400;
-    font-style: italic;
+  font-weight: 400;
+  font-style: italic;
 }
 
 .banner__title {
-    text-align: center;
+  text-align: center;
 }
 
 .banner__champion {
-    text-transform: uppercase;
-    font-style: italic;
-    font-size: 100px;
-    line-height: 1;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 100px;
+  line-height: 1;
 }
 
 .banner__description {
-    letter-spacing: 0.08em;
-    max-width: 460px;
-    margin: 12px auto 0px;
-    text-align: center;
+  letter-spacing: 0.08em;
+  max-width: 460px;
+  margin: 12px auto 0px;
+  text-align: center;
 }
 
-
 .filter {
-    column-gap: 10px;
-    margin-top: 70px;
-    display: flex;
-    justify-content: center;
+  column-gap: 10px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
 }
 
 .filter__button {
-    padding: 5px 20px;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 7px;
-   
-
+  padding: 5px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 7px;
 }
-
-
-  

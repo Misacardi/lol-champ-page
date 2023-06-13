@@ -1,73 +1,68 @@
 .card {
-    width: 250px;
-    height: 350px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
+  width: 250px;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
 
-    margin-left: 15px;
-    overflow: hidden;
-    transition: 300ms;
-    transition-delay: 200ms;
-    margin-bottom: 25px;
-    cursor: pointer;
-
+  margin-left: 15px;
+  overflow: hidden;
+  transition: 300ms;
+  transition-delay: 200ms;
+  margin-bottom: 25px;
+  cursor: pointer;
 }
 
-
 .card__content {
-    position: absolute;
-    bottom: 20px;
-    transform: translateY(61%);
-    transition: 300ms;
-    width: 100%;
-    transition-delay: 300ms;
-    padding: 10px;
-    
-
+  position: absolute;
+  bottom: 20px;
+  transform: translateY(61%);
+  transition: 300ms;
+  width: 100%;
+  transition-delay: 300ms;
+  padding: 10px;
 }
 
 .card__title {
-    color: var(--neutural-100);
-    text-transform: uppercase;
-    padding-bottom: 20px;
-
+  color: var(--neutural-100);
+  text-transform: uppercase;
+  padding-bottom: 20px;
 }
 .card__title:after {
-    content: "";
-    position: absolute;
-    transition: 250ms;
-    height: 3px;
-    width: 1%;
-    top: 45px;
-    left: 9px;
-    border-radius: 5px;
-    background-color: var(--neutural-400);
+  content: "";
+  position: absolute;
+  transition: 250ms;
+  height: 3px;
+  width: 1%;
+  top: 45px;
+  left: 9px;
+  border-radius: 5px;
+  background-color: var(--neutural-400);
 }
 .card__button {
-    background-color: var(--neutural-400);
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 5px;
-    border-radius: 7px;
-    color: var(--neutural-900);
+  background-color: var(--neutural-400);
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 7px;
+  color: var(--neutural-900);
 }
 
 .card:hover {
-    transform: scale(1.08);
+  transform: scale(1.08);
 }
 
 .card:hover .card__content {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 .card:hover .card__title:after {
-    width: 92%;
+  width: 92%;
 }
 .cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-left: -15px;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-top: 50px;
 }

@@ -3,8 +3,7 @@
   margin: 0;
 }
 .App {
-    font-family: 'Open Sans', sans-serif;
-
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {
@@ -12,8 +11,8 @@
   margin: 0 auto;
 }
 a {
-    text-decoration: none;
-    color: black
+  text-decoration: none;
+  color: black;
 }
 /* Указываем box sizing */
 *,
@@ -85,15 +84,12 @@ select {
 
 button {
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-
 /* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
-
