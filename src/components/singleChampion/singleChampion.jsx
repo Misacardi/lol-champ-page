@@ -21,53 +21,19 @@ const SingleChampion = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const SetDifficutly = () => {
-    const spanDifficulty = (mid = "", high = "") => {
+   
       return (
         <>
-          <div className="squere plus"> </div>
-          <div className={"squere " + mid}> </div>
-          <div className={"squere " + high}> </div>
-        </>
-      );
-    };
+        <div className="squere plus"> </div>
+        <div className={`squere ${difficulty === 'mid' || difficulty === 'high' ? 'plus' : ''}`}></div>
+        <div className={`squere ${ difficulty === 'high' ? 'plus' : ''}`}></div>
+      </>
+      )
+  
+  
+  }
 
-    switch (difficulty) {
-      case "high":
-        return spanDifficulty("plus", "plus");
 
-      case "mid":
-        return spanDifficulty("plus");
-
-      default:
-        return spanDifficulty();
-    }
-  };
-
-  const SetroleImg = () => {
-    const roleimg = (rolesrc) => {
-      return <img src={rolesrc} alt="" className="role__img" />;
-    };
-
-    const src =
-      "https://raw.communitydragon.org/9.4/plugins/rcp-fe-lol-champion-details/global/default/role-icon-";
-
-    switch (role) {
-      case "mage":
-        return roleimg(src + "mage.png");
-      case "assasin":
-        return roleimg(src + "assassin.png");
-      case "fighter":
-        return roleimg(src + "fighter.png");
-      case "marksman":
-        return roleimg(src + "marksman.png");
-      case "tank":
-        return roleimg(src + "tank.png");
-      case "support":
-        return roleimg(src + "support.png");
-
-      default:
-    }
-  };
 
   return (
     <div className="single-champion">
@@ -95,7 +61,7 @@ const SingleChampion = () => {
             <div className="champion__info-inner">
               <ul className="champion__spec">
                 <li className="role">
-                  <SetroleImg />
+                  <img src={`https://raw.communitydragon.org/9.4/plugins/rcp-fe-lol-champion-details/global/default/role-icon-${role}.png`} alt="" className="role__img" />
                   <h2 className="spec__title">role</h2>
                   <span className="spec__desc">{role}</span>
                 </li>

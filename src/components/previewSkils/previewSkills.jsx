@@ -8,10 +8,28 @@ const PreviewSkills = ({ skils }) => {
 
   const itemRef = useRef([]);
 
+
+  const [typeSkill, setTypeSkill] = useState(0)
+
+
+
+  const SetTypeOfSkill = () => {
+    const skillTypes = {
+      1: 'Q',
+      2: 'W',
+      3: 'E',
+      4: 'ULTIMATE',
+      default: 'PASIVE',
+    };
+  
+    return skillTypes[typeSkill] || skillTypes.default;
+  };
+
   const focusOnItem = (id) => {
     itemRef.current.forEach((item) => item.classList.remove("active-skils"));
     itemRef.current[id].classList.add("active-skils");
     activeSkill(id);
+    setTypeSkill(id)
   };
 
   const activeSkill = (key) => {
@@ -41,7 +59,7 @@ const PreviewSkills = ({ skils }) => {
         <ul className="preview__list">{elem}</ul>
 
         <div className="abilities__desc">
-          <span>PASSIVE</span>
+          <span><SetTypeOfSkill/></span>
           <h2 className="abilities__name">{skillName}</h2>
           <div>{skillDesc}</div>
         </div>
