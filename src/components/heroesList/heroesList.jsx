@@ -1,20 +1,21 @@
 import "./heroesList.css";
 import { useHttp } from "../../hooks/http.hook";
 import Spinner from "../loading/spinner";
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import HeroListItem from "../heroListCard/heroListCard";
 import {
   championsFetched,
   championFetching,
   changeStatusFilter,
 } from "../../action";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 const HeroList = () => {
-  const filterButton = ["all", "assasin", "mage", "tank", "marksman"];
+  const filterButton = ["all", "assassin", "mage", "tank", "marksman"];
   const { request } = useHttp();
   const dispatch = useDispatch();
-
+  const roleRef = useRef([]);
   const { loadingStatus, filterStatus } = useSelector((state) => state);
 
   const filterChampion = useSelector((state) => {
@@ -25,6 +26,14 @@ const HeroList = () => {
     }
   });
 
+
+  const focusRole = (id) => {
+    roleRef.current.forEach(item => {
+      item.classList.remove('role-active')
+    })
+    roleRef.current[id].classList.add('role-active')
+  }
+
   useEffect(() => {
     dispatch(championFetching());
     request("http://localhost:3001/champions").then((data) =>
@@ -32,9 +41,11 @@ const HeroList = () => {
     ); // eslint-disable-next-line
   }, []);
 
-  const elem = filterChampion.map(({ id, name, img }) => {
-    return <HeroListItem key={id} name={name} img={img} id={id} />;
-  });
+  const elem = filterChampion.map(({ id, name, img }) => (
+    <CSSTransition key={id} classNames="fade" timeout={500}>
+      <HeroListItem name={name} img={img} id={id} />
+    </CSSTransition>
+  ))
 
   return (
     <>
@@ -54,11 +65,13 @@ const HeroList = () => {
 
         <div className="filter">
           {filterButton.map((item, i) => {
+            const active = i === 0 ? 'filter__button role-active' : 'filter__button'
             return (
               <button
+              ref={(el) => (roleRef.current[i] = el)}
                 key={i}
-                className="filter__button"
-                onClick={() => dispatch(changeStatusFilter(item))}
+                className={active}
+                onClick={() => {dispatch(changeStatusFilter(item)); focusRole(i)}}
               >
                 {item}
               </button>
@@ -66,7 +79,11 @@ const HeroList = () => {
           })}
         </div>
 
-        <ul className="cards">{loadingStatus ? <Spinner /> : elem}</ul>
+ 
+          <TransitionGroup className="cards">
+          { elem }
+        </TransitionGroup>
+    
       </div>
     </>
   );
