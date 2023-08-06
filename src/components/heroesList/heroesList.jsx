@@ -1,6 +1,5 @@
 import "./heroesList.css";
 import { useHttp } from "../../hooks/http.hook";
-import Spinner from "../loading/spinner";
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import HeroListItem from "../heroListCard/heroListCard";
 import {
@@ -16,7 +15,7 @@ const HeroList = () => {
   const { request } = useHttp();
   const dispatch = useDispatch();
   const roleRef = useRef([]);
-  const { loadingStatus, filterStatus } = useSelector((state) => state);
+  const {filterStatus } = useSelector((state) => state);
 
   const filterChampion = useSelector((state) => {
     if (filterStatus === "all") {

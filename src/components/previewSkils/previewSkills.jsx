@@ -21,7 +21,7 @@ const PreviewSkills = ({ skils }) => {
       4: 'ULTIMATE',
       default: 'PASIVE',
     };
-  
+
     return skillTypes[typeSkill] || skillTypes.default;
   };
 

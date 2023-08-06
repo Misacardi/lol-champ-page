@@ -10,7 +10,6 @@
   overflow: hidden;
   transition: 300ms;
   transition-delay: 200ms;
-
   cursor: pointer;
 }
 
@@ -29,6 +28,7 @@
   text-transform: uppercase;
   padding-bottom: 20px;
 }
+
 .card__title:after {
   content: "";
   position: absolute;
@@ -40,6 +40,7 @@
   border-radius: 5px;
   background-color: var(--neutural-400);
 }
+
 .card__button {
   background-color: var(--neutural-400);
   text-transform: uppercase;
@@ -56,9 +57,11 @@
 .card:hover .card__content {
   transform: translateY(0);
 }
+
 .card:hover .card__title:after {
   width: 92%;
 }
+
 .cards {
   display: flex;
   justify-content: center;
@@ -67,6 +70,7 @@
 
   margin-top: 50px;
 }
+
 .fade-enter {
   opacity: 0;
 }
@@ -83,4 +87,27 @@
 .fade-exit-active {
   opacity: 0;
   transition: opacity 300ms;
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 200px;
+    height: 250px;
+
+  }
+
+}
+
+@media (max-width: 525px) {
+  .card {
+    width: 150px;
+    height: 200px;
+
+  }
+
+  .card__title {
+    text-align: center;
+    font-size: 19px;
+  }
 }

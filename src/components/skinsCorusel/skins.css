@@ -1,14 +1,16 @@
 .skins__image {
   position: relative;
 }
+
 .skins {
-  max-width: 1560px;
+  max-width: 1360px;
   margin: 80px auto;
 }
 
 .skins__img {
   width: 100%;
   object-fit: cover;
+
 }
 
 .skins__carousel {
@@ -17,51 +19,49 @@
   width: 31%;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
+  overflow: hidden;
 }
 
 .corousel__title {
   position: relative;
-  color: white;
+  text-align: center;
   font-size: 40px;
   font-weight: 800;
   padding: 40px 20px;
   font-style: italic;
   letter-spacing: 0.05em;
-  display: flex;
-  justify-content: center;
+  color: white;
 }
 
 .corousel__title::after {
   content: "";
   position: absolute;
-  bottom: 35px;
+  right: 50%;
+  bottom: 20px;
+  transform: translate(50%);
   width: 80%;
   height: 1px;
   background: rgba(255, 255, 255, 0.2);
-  transform-origin: left center;
 }
 
 .carousel {
   overflow: hidden;
-
-  margin-left: 50px;
-  height: 65vh;
+  margin-left: 40px;
 }
+
 .carousel__inner {
   display: flex;
   flex-direction: column;
   transition: 400ms;
   padding-top: 150px;
-  scroll-snap-type: y mandatory;
-  -webkit-overflow-scrolling: touch;
 }
 
 .carousel__item {
   display: flex;
   color: rgba(255, 255, 255, 0.6);
-  padding: 20px;
-  align-items: center;
+  padding: 20px
 }
+
 .carousel__item span {
   margin: 20px;
   font-weight: 400;
@@ -84,6 +84,7 @@
   outline: 1px solid rgba(255, 255, 255, 0.2);
   outline-offset: -7px;
 }
+
 .carousel-active img {
   transition: 300ms;
   transform: scale(1.7);
@@ -94,4 +95,59 @@
   transition: 300ms;
   margin-left: 40px;
   color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1024px) {
+  .skins__carousel {
+    width: 100%;
+    position: inherit;
+
+  }
+
+  .skins {
+    background-color: black;
+    margin: 0;
+  }
+
+  .skins__img {
+    padding: 30px;
+
+  }
+
+  .corousel__title {
+    font-size: 17px;
+    padding: 0;
+  }
+
+  .carousel__inner {
+    flex-direction: inherit;
+    justify-content: center;
+    padding-left: 250px;
+  }
+
+  .carousel__item {
+    width: 140px;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .carousel__item span {
+    margin: 0
+  }
+
+  .carousel-active img {
+    transform: translateY(-15px);
+  }
+
+  .corousel__title::after {
+    bottom: -13px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .carousel__inner {
+    padding-top: 30px;
+
+  }
 }
