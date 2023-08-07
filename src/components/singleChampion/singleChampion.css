@@ -1,6 +1,5 @@
 .single-champion {
   position: relative;
-
 }
 
 .background {
@@ -73,7 +72,7 @@
 .champion__info {
   position: absolute;
   top: 80%;
-  transition: .1s;
+  transition: 0.1s;
   max-width: 1400px;
 }
 
@@ -95,7 +94,7 @@
 }
 
 .champion__spec::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 1px;
   right: 0;
@@ -112,8 +111,6 @@
 }
 
 @media (max-width: 1024px) {
-
-
   .champion__info-inner {
     flex-direction: column;
   }
@@ -131,7 +128,6 @@
   }
 
   .champion__spec::after {
-
     left: 50%;
     bottom: 5%;
     transform: translateX(-50%);
@@ -144,10 +140,6 @@
     margin-bottom: 20px;
   }
 }
-
-
-
-
 
 .role {
   text-align: center;
@@ -192,10 +184,6 @@
 .plus {
   opacity: 1;
 }
-
-
-
-
 
 .border {
   padding: 0px;

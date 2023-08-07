@@ -1,4 +1,44 @@
 {
+
+
+    "championList": [
+        {
+            "id": "1",
+            "name": "Aatrox",
+            "role": "fighter",
+            "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
+        },
+        {
+            "id": "2",
+            "name": "Akali",
+            "role": "assassin",
+            "img": "https://cdn.mobachampion.com/imgs/champion/highres/akali.jpg?strip=all"
+        },
+        {
+            "id": "3",
+            "name": "Amumu",
+            "role": "tank",
+            "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg"
+        },
+        {
+            "id": "4",
+            "name": "Aphelios",
+            "role": "marksman",
+            "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg"
+        },
+        {
+            "id": "5",
+            "name": "Aurelian Soul",
+            "role": "mage",
+            "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg"
+        },
+        {
+            "id": "6",
+            "name": "Draven",
+            "role": "marksman",
+            "img": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg"
+        }
+    ],
     "champions": [
         {
             "id": "1",

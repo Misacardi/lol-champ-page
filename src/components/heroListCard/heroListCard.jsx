@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import "./heroListCard.css";
 const HeroListItem = ({ name, img, id }) => {
   return (
-
-    
     <Link
       to={`/${id}`}
       className="card"
@@ -19,9 +17,6 @@ const HeroListItem = ({ name, img, id }) => {
         </Link>
       </div>
     </Link>
-
-
-    
   );
 };
 

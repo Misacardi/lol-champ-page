@@ -12,7 +12,6 @@
   align-items: center;
 
   gap: 6vw;
-
 }
 
 .abilities__background {
@@ -124,14 +123,12 @@
 }
 
 .abilities__inner-video video {
-
   width: 100%;
   height: 100%;
-  object-fit: cover
+  object-fit: cover;
 }
 
 @media (max-width: 1024px) {
-
   .abilities__inner-video {
     padding: 20px;
     outline-offset: -28px;
@@ -148,7 +145,6 @@
     top: -20px;
     left: 48%;
     transform: translate(-50%);
-
   }
 
   .preview__list {

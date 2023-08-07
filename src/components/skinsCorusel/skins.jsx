@@ -17,10 +17,8 @@ const Skins = ({ champ }) => {
       item.classList.remove("carousel-active")
     );
     skinsRef.current[id].classList.add("carousel-active");
-
     setOffset(heigth * id);
     changeBackgroundImg(id);
-    console.log(offset)
   };
 
   const skinsButton = champ.map((item, i) => {
@@ -42,7 +40,7 @@ const Skins = ({ champ }) => {
   const transformStyle =
     window.innerWidth > 1024
       ? `translateY(-${offset}px)`
-      : `translateX(-${offset}px)`
+      : `translateX(-${offset}px)`;
 
   return (
     <>
@@ -57,7 +55,7 @@ const Skins = ({ champ }) => {
                 <ul
                   className="carousel__inner"
                   style={{ transform: transformStyle }}
-                  ref={el => (carouselRef.current = el)}
+                  ref={(el) => (carouselRef.current = el)}
                 >
                   {skinsButton}
                 </ul>

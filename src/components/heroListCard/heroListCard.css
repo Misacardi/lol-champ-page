@@ -89,21 +89,17 @@
   transition: opacity 300ms;
 }
 
-
 @media (max-width: 768px) {
   .card {
     width: 200px;
     height: 250px;
-
   }
-
 }
 
 @media (max-width: 525px) {
   .card {
     width: 150px;
     height: 200px;
-
   }
 
   .card__title {

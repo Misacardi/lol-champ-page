@@ -3,47 +3,38 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Skins from "../skinsCorusel/skins";
 import PreviewSkills from "../previewSkils/previewSkills";
-import useChampionService from "../services/championsService";
+import useChampionService from "../../services/championsService";
 
 const SingleChampion = () => {
   const { heroId } = useParams();
-
   const { getChampion } = useChampionService();
 
   const [activeChampion, setActiveChampoion] = useState({});
   const { name, img, role, description, difficulty } = activeChampion;
 
-  const getActiveChampion = (champ) => {
-    setActiveChampoion(champ);
-  };
   useEffect(() => {
-    getChampion(heroId).then((res) => getActiveChampion(res));
+    getChampion(heroId).then((res) => setActiveChampoion(res));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const SetDifficutly = () => {
-
     return (
       <>
         <div className="squere plus"> </div>
-        <div className={`squere ${difficulty === 'mid' || difficulty === 'high' ? 'plus' : ''}`}></div>
-        <div className={`squere ${difficulty === 'high' ? 'plus' : ''}`}></div>
+        <div
+          className={`squere ${
+            difficulty === "mid" || difficulty === "high" ? "plus" : ""
+          }`}
+        ></div>
+        <div className={`squere ${difficulty === "high" ? "plus" : ""}`}></div>
       </>
-    )
-
-
-  }
-
+    );
+  };
 
   return (
     <div className="single-champion">
-
       <div className="background">
         <div className="background__blackout">
-          <img
-            className="background__image"
-            src={img}
-            alt="hero background"
-          />
+          <img className="background__image" src={img} alt="hero background" />
         </div>
       </div>
 
@@ -60,7 +51,11 @@ const SingleChampion = () => {
           <div className="champion__info-inner">
             <ul className="champion__spec">
               <li className="role">
-                <img src={`https://raw.communitydragon.org/9.4/plugins/rcp-fe-lol-champion-details/global/default/role-icon-${role}.png`} alt="" className="role__img" />
+                <img
+                  src={`https://raw.communitydragon.org/9.4/plugins/rcp-fe-lol-champion-details/global/default/role-icon-${role}.png`}
+                  alt=""
+                  className="role__img"
+                />
                 <h2 className="spec__title">role</h2>
                 <span className="spec__desc">{role}</span>
               </li>
@@ -74,8 +69,6 @@ const SingleChampion = () => {
               </li>
             </ul>
 
-
-
             <div className="info__desc">{description}</div>
           </div>
 
@@ -87,7 +80,6 @@ const SingleChampion = () => {
           </div>
         </div>
       </div>
-
 
       <div />
       <div className="abilities">

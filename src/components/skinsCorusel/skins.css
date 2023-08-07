@@ -10,7 +10,6 @@
 .skins__img {
   width: 100%;
   object-fit: cover;
-
 }
 
 .skins__carousel {
@@ -59,7 +58,7 @@
 .carousel__item {
   display: flex;
   color: rgba(255, 255, 255, 0.6);
-  padding: 20px
+  padding: 20px;
 }
 
 .carousel__item span {
@@ -101,7 +100,6 @@
   .skins__carousel {
     width: 100%;
     position: inherit;
-
   }
 
   .skins {
@@ -111,7 +109,6 @@
 
   .skins__img {
     padding: 30px;
-
   }
 
   .corousel__title {
@@ -133,7 +130,7 @@
   }
 
   .carousel__item span {
-    margin: 0
+    margin: 0;
   }
 
   .carousel-active img {
@@ -148,6 +145,5 @@
 @media (max-width: 1440px) {
   .carousel__inner {
     padding-top: 30px;
-
   }
 }
