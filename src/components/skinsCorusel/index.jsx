@@ -45,6 +45,7 @@ const Skins = ({ champ }) => {
   return (
     <>
       <div className="skins">
+        <div className="container">
         <div className="skins__inner">
           <div className="skins__image">
             <img className="skins__img" src={skinsImg} alt="" />
@@ -63,6 +64,8 @@ const Skins = ({ champ }) => {
             </div>
           </div>
         </div>
+        </div>
+       
       </div>
     </>
   );

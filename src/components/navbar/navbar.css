@@ -10,20 +10,30 @@
 .nav__item:hover a {
   background: rgba(128, 128, 128, 0.3);
 }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px ;
+}
 
 .nav__item {
   padding: 15px;
 }
 .nav {
-  background-color: #111;
+  background-color: #1c2128;
 }
 .nav ul {
   display: flex;
-  
   height: 80px;
   align-items: center;
 }
 
 .nav__logo {
   max-height: 70px;
+}
+
+.button__theme  {
+  max-width: 40px;
+  max-height: 40px;
 }

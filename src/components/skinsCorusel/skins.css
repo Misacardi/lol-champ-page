@@ -3,10 +3,11 @@
 }
 
 .skins {
-  max-width: 1360px;
-  margin: 80px auto;
+  padding: 20px 0;
 }
-
+.dark .skins {
+  background-color: rgb(0, 9, 19);
+}
 .skins__img {
   width: 100%;
   object-fit: cover;

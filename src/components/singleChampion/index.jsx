@@ -10,7 +10,7 @@ const SingleChampion = () => {
   const { getChampion } = useChampionService();
 
   const [activeChampion, setActiveChampoion] = useState({});
-  const { name, img, role, description, difficulty } = activeChampion;
+  const { name, img, role, description, difficulty, subtitle } = activeChampion;
 
   useEffect(() => {
     getChampion(heroId).then((res) => setActiveChampoion(res));
@@ -47,7 +47,7 @@ const SingleChampion = () => {
         <div className="champion__blackout"></div>
         <div className="champion__info">
           <h2 className="champion__title">
-            <span>THE WEAPON OF THE FAITHFUL</span>
+            <span>{subtitle}</span>
             <div>{name}</div>
           </h2>
 

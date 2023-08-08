@@ -41,7 +41,7 @@ const PreviewSkills = ({ skils }) => {
       <li className="preview__button " key={i} onClick={() => focusOnItem(i)}>
         <button>
           <div className={active} ref={(el) => (itemRef.current[i] = el)}>
-            <img className="" src={item.img} alt="" />
+            <img src={item.img} alt="" />
             <div className="circle"></div>
           </div>
         </button>

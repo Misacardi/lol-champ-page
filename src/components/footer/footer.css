@@ -13,7 +13,9 @@
     padding: 0 10px;
 }
 
-
+.dark .footer {
+    background-color: #000;
+}
 
 .footer__name {
     color: #ffffff;

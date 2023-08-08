@@ -5,6 +5,7 @@
 }
 .championlist {
   min-height: 100vh;
+  transition: .5s;
 }
 .banner {
   padding-top: 100px;
@@ -26,11 +27,7 @@
   line-height: 1;
 }
 
-@media (max-width: 525px) {
-  .banner__champion {
-    font-size: 50px;
-  }
-}
+
 
 .banner__description {
   letter-spacing: 0.08em;
@@ -50,12 +47,44 @@
 .filter__button {
   padding: 5px 20px;
   cursor: pointer;
+  
   font-weight: 600;
   text-transform: uppercase;
   border-radius: 10px;
 }
 
 .role-active {
+  transition: .5s;
   color: aliceblue;
   background-color: black;
+}
+
+@media (max-width: 525px) {
+  .banner__champion {
+    font-size: 50px;
+  }
+  .filter__button {
+    padding: 13px 101px;
+  }
+}
+
+.dark {
+  transition: 0.5s;
+}
+.dark .nav {
+  background-color: black;
+}
+
+.dark .championlist {
+  color: white;
+  background-color: #1c2128;
+}
+
+.dark .card__content {
+  background-color: rgb(87, 91, 95);
+}
+
+.dark .role-active {
+  color: #1c2128;
+  background-color: rgb(117, 125, 133);
 }

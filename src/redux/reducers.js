@@ -4,6 +4,7 @@ const initialState = {
   champions: [],
   loadingStatus: false,
   filterStatus: "all",
+  darkTheme: true
 };
 
 const championSlice = createSlice({
@@ -20,8 +21,12 @@ const championSlice = createSlice({
     changeFilter(state, action) {
       state.filterStatus = action.payload;
     },
+    change(state) {
+      state.darkTheme = !state.darkTheme
+    }
   },
 });
 
-export const { fetching, fetched, changeFilter } = championSlice.actions;
+
+export const { fetching, fetched, changeFilter, change } = championSlice.actions;
 export default championSlice.reducer;

@@ -55,7 +55,7 @@
 
 .champion__title span {
   font-weight: 500;
-  font-size: 1vw;
+  font-size: 2vw;
   color: #ffff;
   font-style: italic;
   letter-spacing: 0.1em;
@@ -63,7 +63,7 @@
 
 .champion__title div {
   color: #ffff;
-  font-size: 4vw;
+  font-size: 5vw;
   letter-spacing: 0.05em;
   line-height: 0.85;
   font-style: italic;
@@ -116,11 +116,11 @@
   }
 
   .champion__title span {
-    font-size: 2vw;
+    font-size: 20px;
   }
 
   .champion__title div {
-    font-size: 10vw;
+    font-size: 50px;
   }
 
   .champion__spec {
