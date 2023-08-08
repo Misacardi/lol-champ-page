@@ -2,7 +2,7 @@ import "./singleChampion.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Skins from "../skinsCorusel";
-import PreviewSkills from "../previewSkils";
+import PreviewSkills from "../previewSkills";
 import useChampionService from "../../services/championsService";
 
 const SingleChampion = () => {
@@ -13,6 +13,7 @@ const SingleChampion = () => {
   const { name, img, role, description, difficulty, subtitle } = activeChampion;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getChampion(heroId).then((res) => setActiveChampoion(res));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

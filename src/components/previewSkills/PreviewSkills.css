@@ -43,16 +43,8 @@
 }
 
 .active-skils {
-  transition: 300ms;
   border: 1.5px solid rgb(208, 168, 92);
   transform: translateY(-15px);
-}
-
-.preview__button button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .preview__img {
@@ -62,9 +54,8 @@
   padding: 5px;
 }
 
-.active .circle {
+.active-skils .circle {
   background-color: rgb(208, 168, 92);
-  transform: translateY(15px);
 }
 
 .preview__img button {
@@ -74,7 +65,6 @@
 
 .circle {
   position: absolute;
-  transition: 800ms;
   width: 9px;
   height: 9px;
   background-color: rgb(57, 64, 72);
@@ -84,6 +74,7 @@
 }
 
 .abilities__desc {
+  min-height: 260px;
   color: #ffff;
   max-width: 450px;
   margin-top: 40px;

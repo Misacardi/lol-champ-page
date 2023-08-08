@@ -39,8 +39,8 @@ const PreviewSkills = ({ skils }) => {
     let active = i ? "preview__img" : "preview__img active-skils";
     return (
       <li className="preview__button " key={i} onClick={() => focusOnItem(i)}>
-        <button>
-          <div className={active} ref={(el) => (itemRef.current[i] = el)}>
+        <button className={active} ref={(el) => (itemRef.current[i] = el)}>
+          <div>
             <img src={item.img} alt="" />
             <div className="circle"></div>
           </div>
