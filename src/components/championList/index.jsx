@@ -22,6 +22,7 @@ const ChampionList = () => {
   };
 
   useEffect(() => { 
+    document.title = 'Champions';
     dispatch(fetching());
     getChampionList().then((data) => dispatch(fetched(data))); // eslint-disable-next-line
   }, []);

@@ -15,6 +15,10 @@ const SingleChampion = () => {
   useEffect(() => {
     getChampion(heroId).then((res) => setActiveChampoion(res));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    document.title = name || 'Champions';
+  }, [name]);
   const SetDifficutly = () => {
     return (
       <>
