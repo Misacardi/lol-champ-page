@@ -1,8 +1,8 @@
-import Navbar from "../navbar/navbar";
-import HeroList from "../heroesList/heroesList";
+import Navbar from "../navbar";
+import HeroList from "../heroesList";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SingleChampion from "../singleChampion/singleChampion";
-
+import SingleChampion from "../singleChampion";
+import Footer from "../footer";
 import "./app.css";
 
 const App = () => {
@@ -19,6 +19,7 @@ const App = () => {
             {" "}
           </Route>
         </Routes>
+        <Footer/>
       </Router>
     </div>
   );

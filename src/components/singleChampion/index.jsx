@@ -1,8 +1,8 @@
 import "./singleChampion.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Skins from "../skinsCorusel/skins";
-import PreviewSkills from "../previewSkils/previewSkills";
+import Skins from "../skinsCorusel";
+import PreviewSkills from "../previewSkils";
 import useChampionService from "../../services/championsService";
 
 const SingleChampion = () => {

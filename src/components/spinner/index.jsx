@@ -1,7 +1,7 @@
 import "./style.css";
 
 const Spinner = () => {
-  return <div className="lds-dual-ring"></div>;
+  return <div class="loader">Loading...</div>
 };
 
 export default Spinner;

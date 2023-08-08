@@ -24,7 +24,7 @@
   line-height: 1;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
   .banner__champion {
     font-size: 50px;
   }

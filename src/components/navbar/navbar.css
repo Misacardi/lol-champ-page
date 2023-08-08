@@ -23,5 +23,5 @@
 }
 
 .nav__logo {
-  height: 70px;
+  max-height: 70px;
 }

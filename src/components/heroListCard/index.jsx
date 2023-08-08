@@ -12,9 +12,6 @@ const HeroListItem = ({ name, img, id }) => {
     >
       <div className="card__content">
         <h2 className="card__title">{name}</h2>
-        <Link to={`/${id}`} className="card__button">
-          Learn More{" "}
-        </Link>
       </div>
     </Link>
   );

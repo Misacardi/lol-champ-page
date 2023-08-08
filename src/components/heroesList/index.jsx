@@ -1,25 +1,18 @@
 import "./heroesList.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import HeroListItem from "../heroListCard/heroListCard";
+import HeroListItem from "../heroListCard";
 import { fetching, fetched, changeFilter } from "../../redux/reducers";
 import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useChampionService from "../../services/championsService";
+import Spinner from "../spinner";
 
 const HeroList = () => {
   const filterButton = ["all", "assassin", "mage", "tank", "marksman"];
   const { getChampionList } = useChampionService();
   const dispatch = useDispatch();
   const roleRef = useRef([]);
-  const { filterStatus } = useSelector((state) => state);
-
-  const filterChampion = useSelector((state) => {
-    if (filterStatus === "all") {
-      return state.champions;
-    } else {
-      return state.champions.filter((item) => item.role === filterStatus);
-    }
-  });
+  const { filterStatus, loadingStatus } = useSelector((state) => state);
 
   const focusRole = (id) => {
     roleRef.current.forEach((item) => {
@@ -28,10 +21,18 @@ const HeroList = () => {
     roleRef.current[id].classList.add("role-active");
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     dispatch(fetching());
     getChampionList().then((data) => dispatch(fetched(data))); // eslint-disable-next-line
   }, []);
+
+  const filterChampion = useSelector((state) => {
+    if (filterStatus === "all") {
+      return state.champions;
+    } else {
+      return state.champions.filter((item) => item.role === filterStatus);
+    }
+  });
 
   const elem = filterChampion.map(({ id, name, img }) => (
     <CSSTransition key={id} classNames="fade" timeout={500}>
@@ -76,6 +77,7 @@ const HeroList = () => {
         </div>
 
         <TransitionGroup className="cards">{elem}</TransitionGroup>
+        {loadingStatus && <Spinner />}
       </div>
     </>
   );

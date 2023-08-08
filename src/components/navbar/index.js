@@ -16,7 +16,7 @@ const Navbar = () => {
         </li>
 
         <li className="nav__item">
-          <NavLink to={"/lol"}>
+          <NavLink>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="league"
