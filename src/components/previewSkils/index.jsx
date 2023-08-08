@@ -65,7 +65,7 @@ const PreviewSkills = ({ skils }) => {
       </div>
 
       <div className="abilities__inner-video">
-        <video muted autoPlay loop src={skillVideo} type="video/mp4"></video>
+        <video muted autoPlay playsInline loop src={skillVideo} type="video/mp4"></video>
       </div>
     </div>
   );

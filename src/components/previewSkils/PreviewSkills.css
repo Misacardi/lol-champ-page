@@ -10,7 +10,6 @@
 .abilities__inner {
   display: flex;
   align-items: center;
-
   gap: 6vw;
 }
 
@@ -113,8 +112,9 @@
 /* video */
 
 .abilities__inner-video {
-  width: 700px;
-  height: 400px;
+  width: 800px;
+  height: 450px;
+  margin-top: 100px;
   overflow: hidden;
   outline: 1px solid rgba(255, 255, 255, 0.2);
   outline-offset: -12px;
@@ -139,9 +139,9 @@
 
   .preview__title {
     position: absolute;
-    font-size: 23px;
-    top: -20px;
-    left: 48%;
+    font-size: 30px;
+    top: 10px;
+    left: 50%;
     transform: translate(-50%);
   }
 
@@ -155,10 +155,10 @@
   }
 }
 
-@media (max-width: 705px) {
+@media (max-width: 768px) {
   .abilities__inner-video {
-    width: 500px;
-    height: 300px;
+    width: 600px;
+    height: 400px;
   }
 }
 
