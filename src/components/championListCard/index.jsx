@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./heroListCard.css";
-const HeroListItem = ({ name, img, id }) => {
+const ChampionListItem = ({ name, img, id }) => {
   return (
     <Link
       to={`/${id}`}
@@ -17,4 +17,4 @@ const HeroListItem = ({ name, img, id }) => {
   );
 };
 
-export default HeroListItem;
+export default ChampionListItem;

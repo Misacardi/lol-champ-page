@@ -14,10 +14,12 @@
 .nav__item {
   padding: 15px;
 }
-
+.nav {
+  background-color: #111;
+}
 .nav ul {
   display: flex;
-  background-color: #111;
+  
   height: 80px;
   align-items: center;
 }

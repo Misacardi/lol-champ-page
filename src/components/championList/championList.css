@@ -3,7 +3,9 @@
   --neutural-100: hsl(0, 0%, 100%);
   --neutural-400: rgb(11, 196, 226);
 }
-
+.championlist {
+  min-height: 100vh;
+}
 .banner {
   padding-top: 100px;
 }

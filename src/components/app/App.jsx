@@ -1,5 +1,5 @@
 import Navbar from "../navbar";
-import HeroList from "../heroesList";
+import ChampionList from "../championList";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SingleChampion from "../singleChampion";
 import Footer from "../footer";
@@ -12,7 +12,7 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<HeroList />}>
+          <Route path="/" element={<ChampionList />}>
             {" "}
           </Route>
           <Route path="/:heroId" element={<SingleChampion />}>

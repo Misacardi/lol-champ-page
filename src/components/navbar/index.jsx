@@ -3,6 +3,7 @@ import "./navbar.css";
 const Navbar = () => {
   return (
     <nav className="nav">
+      <div className="container">
       <ul>
         <li className="nav__item">
           <NavLink to={"/"}>
@@ -50,6 +51,8 @@ const Navbar = () => {
           <NavLink to="/">Champions</NavLink>
         </li>
       </ul>
+      </div>
+      
     </nav>
   );
 };

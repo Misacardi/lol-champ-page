@@ -1,13 +1,13 @@
-import "./heroesList.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import HeroListItem from "../heroListCard";
+import ChampionListItem from "../championListCard";
 import { fetching, fetched, changeFilter } from "../../redux/reducers";
 import { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useChampionService from "../../services/championsService";
 import Spinner from "../spinner";
+import "./championList.css";
 
-const HeroList = () => {
+const ChampionList = () => {
   const filterButton = ["all", "assassin", "mage", "tank", "marksman"];
   const { getChampionList } = useChampionService();
   const dispatch = useDispatch();
@@ -36,12 +36,12 @@ const HeroList = () => {
 
   const elem = filterChampion.map(({ id, name, img }) => (
     <CSSTransition key={id} classNames="fade" timeout={500}>
-      <HeroListItem name={name} img={img} id={id} />
+      <ChampionListItem name={name} img={img} id={id} />
     </CSSTransition>
   ));
 
   return (
-    <>
+    <div className="championlist">
       <div className="container">
         <div className="banner">
           <div className="banner__text">
@@ -79,8 +79,8 @@ const HeroList = () => {
         <TransitionGroup className="cards">{elem}</TransitionGroup>
         {loadingStatus && <Spinner />}
       </div>
-    </>
+    </div>
   );
 };
 
-export default HeroList;
+export default ChampionList;
