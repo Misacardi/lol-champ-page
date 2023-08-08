@@ -91,3 +91,12 @@
     font-size: 19px;
   }
 }
+
+
+@media (max-width: 370px) {
+  .card {
+    height: 220px;
+    width: 155px;
+  }
+
+}
