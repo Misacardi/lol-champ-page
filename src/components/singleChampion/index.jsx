@@ -5,6 +5,18 @@ import Skins from "../skinsCorusel";
 import PreviewSkills from "../previewSkills";
 import useChampionService from "../../services/championsService";
 
+const DifficultyLevel = ({ difficulty }) => (
+  <>
+    <div className="squere plus"> </div>
+    <div
+      className={`squere ${
+        difficulty === "mid" || difficulty === "high" ? "plus" : ""
+      }`}
+    ></div>
+    <div className={`squere ${difficulty === "high" ? "plus" : ""}`}></div>
+  </>
+);
+
 const SingleChampion = () => {
   const { heroId } = useParams();
   const { getChampion } = useChampionService();
@@ -20,20 +32,6 @@ const SingleChampion = () => {
   useEffect(() => {
     document.title = name || 'Champions';
   }, [name]);
-  const SetDifficutly = () => {
-    return (
-      <>
-        <div className="squere plus"> </div>
-        <div
-          className={`squere ${
-            difficulty === "mid" || difficulty === "high" ? "plus" : ""
-          }`}
-        ></div>
-        <div className={`squere ${difficulty === "high" ? "plus" : ""}`}></div>
-      </>
-    );
-  };
-
   return (
     <div className="single-champion">
       <div className="background">
@@ -66,7 +64,7 @@ const SingleChampion = () => {
 
               <li className="difficutly">
                 <div className="level role__img">
-                  <SetDifficutly />
+                  <DifficultyLevel difficulty={difficulty} />
                 </div>
                 <h2 className="spec__title">DIFFICULTY</h2>
                 <span className="spec__desc">{difficulty}</span>

@@ -1,39 +1,94 @@
-.nav__item a {
-  font-weight: 700;
-  color: #ffff;
-  font-size: 16px;
-  text-transform: uppercase;
-  padding: 6px;
-  border-radius: 8px;
+.nav {
+  position: relative;
+  z-index: 30;
+  color: #fff;
+  background: #071019;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.nav__item:hover a {
-  background: rgba(128, 128, 128, 0.3);
-}
 .header {
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 10px ;
+  padding: 0 40px;
 }
 
-.nav__item {
-  padding: 15px;
-}
-.nav {
-  background-color: #1c2128;
-}
-.nav ul {
-  display: flex;
-  height: 80px;
+.nav__brand {
+  display: inline-flex;
   align-items: center;
+  gap: 14px;
+  color: #f7f3e9;
 }
 
-.nav__logo {
-  max-height: 70px;
+.nav__brand .league {
+  width: 27px;
+  height: 30px;
+  fill: #d7b667;
 }
 
-.button__theme  {
-  max-width: 40px;
-  max-height: 40px;
+.nav__brand > span {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Slab", serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.nav__brand small {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: "REM", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.button__theme {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: border-color 200ms, background-color 200ms, transform 200ms;
+}
+
+.button__theme:hover {
+  border-color: rgba(215, 182, 103, 0.7);
+  background: rgba(215, 182, 103, 0.1);
+  transform: rotate(8deg);
+}
+
+.button__theme img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.button__theme:focus-visible,
+.nav__brand:focus-visible {
+  outline: 2px solid #d7b667;
+  outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 0 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    height: 70px;
+    padding: 0 16px;
+  }
+
+  .nav__brand > span {
+    font-size: 16px;
+  }
 }

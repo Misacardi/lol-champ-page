@@ -1,85 +1,168 @@
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import ChampionListItem from "../championListCard";
-import { fetching, fetched, changeFilter } from "../../redux/reducers";
-import { useEffect, useRef } from "react";
+import {
+  fetching,
+  fetched,
+  fetchingError,
+  changeFilter,
+} from "../../redux/reducers";
+import { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useChampionService from "../../services/championsService";
 import Spinner from "../spinner";
 import "./championList.css";
 
+const filterButtons = [
+  "all",
+  "assassin",
+  "fighter",
+  "mage",
+  "marksman",
+  "support",
+  "tank",
+];
+
 const ChampionList = () => {
-  const filterButton = ["all", "assassin", "mage", "tank", "marksman"];
   const { getChampionList } = useChampionService();
   const dispatch = useDispatch();
-  const roleRef = useRef([]);
-  const { filterStatus, loadingStatus } = useSelector((state) => state);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { champions, filterStatus, loadingStatus, error } = useSelector(
+    (state) => state
+  );
 
-  const focusRole = (id) => {
-    roleRef.current.forEach((item) => {
-      item.classList.remove("role-active");
-    });
-    roleRef.current[id].classList.add("role-active");
-  };
-
-  useEffect(() => { 
-    document.title = 'Champions';
+  useEffect(() => {
+    document.title = "Champions";
     dispatch(fetching());
-    getChampionList().then((data) => dispatch(fetched(data))); // eslint-disable-next-line
+    getChampionList()
+      .then((data) => dispatch(fetched(data)))
+      .catch(() =>
+        dispatch(
+          fetchingError(
+            "Unable to load champions. Check your connection and refresh the page."
+          )
+        )
+      ); // eslint-disable-next-line
   }, []);
 
-  const filterChampion = useSelector((state) => {
-    if (filterStatus === "all") {
-      return state.champions;
-    } else {
-      return state.champions.filter((item) => item.role === filterStatus);
-    }
-  });
+  const filteredChampions = useMemo(() => {
+    const normalizedQuery = searchQuery.trim().toLowerCase();
 
-  const elem = filterChampion.map(({ id, name, img }) => (
+    return champions.filter((champion) => {
+      const matchesRole =
+        filterStatus === "all" || champion.roles.includes(filterStatus);
+      const matchesSearch = champion.name
+        .toLowerCase()
+        .includes(normalizedQuery);
+
+      return matchesRole && matchesSearch;
+    });
+  }, [champions, filterStatus, searchQuery]);
+
+  const cards = filteredChampions.map(({ id, name, img, roles }) => (
     <CSSTransition key={id} classNames="fade" timeout={500}>
-      <ChampionListItem name={name} img={img} id={id} />
+      <ChampionListItem name={name} img={img} id={id} roles={roles} />
     </CSSTransition>
   ));
 
   return (
     <div className="championlist">
-      <div className="container">
-        <div className="banner">
-          <div className="banner__text">
-            <h1 className="banner__title">
-              <span>Choose your</span>
-              <div className="banner__champion">champion</div>
+      <section className="champion-hero">
+        <div className="champion-hero__glow champion-hero__glow--one" />
+        <div className="champion-hero__glow champion-hero__glow--two" />
+
+        <div className="container champion-hero__inner">
+          <div className="champion-hero__copy">
+            <span className="champion-hero__eyebrow">
+              League of Legends · Champion archive
+            </span>
+            <h1 className="champion-hero__title">
+              Find your
+              <span>legend.</span>
             </h1>
+            <p className="champion-hero__description">
+              Explore every champion, discover their abilities and find the
+              playstyle that feels unmistakably yours.
+            </p>
+
+            <a className="champion-hero__cta" href="#champion-roster">
+              Explore roster
+              <span aria-hidden="true">↓</span>
+            </a>
           </div>
-          <div className="banner__description">
-            With more than 140 champions, you’ll find the perfect match for your
-            playstyle. Master one, or master them all.
+
+          <div className="champion-hero__stats">
+            <div>
+              <strong>{champions.length || "170+"}</strong>
+              <span>Champions</span>
+            </div>
+            <div>
+              <strong>7</strong>
+              <span>Playstyles</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>Your main</span>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="filter">
-          {filterButton.map((item, i) => {
-            const active =
-              i === 0 ? "filter__button role-active" : "filter__button";
-            return (
-              <button
-                ref={(el) => (roleRef.current[i] = el)}
-                key={i}
-                className={active}
-                onClick={() => {
-                  dispatch(changeFilter(item));
-                  focusRole(i);
-                }}
+      <section className="roster" id="champion-roster">
+        <div className="container">
+          <div className="roster__heading">
+            <div>
+              <span className="roster__eyebrow">The roster</span>
+              <h2>Choose your champion</h2>
+            </div>
+            <p>
+              {filteredChampions.length}{" "}
+              {filteredChampions.length === 1 ? "champion" : "champions"}
+            </p>
+          </div>
+
+          <div className="champion-toolbar">
+            <label className="champion-search">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className="champion-search__icon"
               >
-                {item}
-              </button>
-            );
-          })}
-        </div>
+                <path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" />
+              </svg>
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                placeholder="Search champion"
+                aria-label="Search champion"
+              />
+            </label>
 
-        <TransitionGroup className="cards">{elem}</TransitionGroup>
-        {loadingStatus && <Spinner />}
-      </div>
+            <div className="filter" aria-label="Filter champions by role">
+              {filterButtons.map((item) => (
+                <button
+                  key={item}
+                  className={`filter__button ${
+                    filterStatus === item ? "role-active" : ""
+                  }`}
+                  onClick={() => dispatch(changeFilter(item))}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <TransitionGroup className="cards">{cards}</TransitionGroup>
+          {loadingStatus && <Spinner />}
+          {error && <div className="championlist__error">{error}</div>}
+          {!loadingStatus && !error && cards.length === 0 && (
+            <div className="championlist__empty">
+              No champions found. Try another name or role.
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 };

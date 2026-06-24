@@ -117,6 +117,32 @@
   object-fit: cover;
 }
 
+.abilities__video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  background:
+    radial-gradient(circle, rgba(208, 168, 92, 0.16), transparent 45%),
+    rgb(5, 16, 27);
+}
+
+.abilities__video-placeholder img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border: 1px solid rgb(208, 168, 92);
+  padding: 8px;
+}
+
+.abilities__video-placeholder span {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+}
+
 @media (max-width: 1024px) {
   .abilities__inner-video {
     padding: 20px;
