@@ -39,9 +39,10 @@ const ChampionList = () => {
   const { getChampionList } = useChampionService();
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
-  const { champions, filterStatus, loadingStatus, error } = useSelector(
-    (state) => state
-  );
+  const champions = useSelector((state) => state.champions);
+  const filterStatus = useSelector((state) => state.filterStatus);
+  const loadingStatus = useSelector((state) => state.loadingStatus);
+  const error = useSelector((state) => state.error);
 
   useEffect(() => {
     document.title = "Champions";

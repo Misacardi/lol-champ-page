@@ -7,7 +7,7 @@ import "./navbar.css";
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const { darkTheme } = useSelector((state) => state);
+  const darkTheme = useSelector((state) => state.darkTheme);
   const setIcon = darkTheme ? sun : moon;
 
   return (

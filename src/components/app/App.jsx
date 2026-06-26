@@ -9,7 +9,7 @@ import StatsCalculator from "../statsCalculator";
 import Footer from "../footer";
 
 const App = () => {
-  const { darkTheme } = useSelector((state) => state);
+  const darkTheme = useSelector((state) => state.darkTheme);
   const theme = darkTheme ? 'App dark': 'App'
   return (
     <div className={theme}>
