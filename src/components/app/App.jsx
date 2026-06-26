@@ -7,7 +7,6 @@ import ChampionCompare from "../championCompare";
 import ItemsPage from "../itemsPage";
 import StatsCalculator from "../statsCalculator";
 import Footer from "../footer";
-import "./app.css";
 
 const App = () => {
   const { darkTheme } = useSelector((state) => state);
