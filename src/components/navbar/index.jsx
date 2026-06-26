@@ -45,6 +45,15 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive ? "nav__link is-active" : "nav__link"
               }
+              to="/calculator"
+            >
+              Calculator
+            </NavLink>
+
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav__link is-active" : "nav__link"
+              }
               to="/compare"
             >
               Compare

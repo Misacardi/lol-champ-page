@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import SingleChampion from "../singleChampion";
 import ChampionCompare from "../championCompare";
 import ItemsPage from "../itemsPage";
+import StatsCalculator from "../statsCalculator";
 import Footer from "../footer";
 import "./app.css";
 
@@ -21,6 +22,7 @@ const App = () => {
             {" "}
           </Route>
           <Route path="/items" element={<ItemsPage />} />
+          <Route path="/calculator" element={<StatsCalculator />} />
           <Route path="/compare" element={<ChampionCompare />} />
           <Route path="/:heroId" element={<SingleChampion />}>
             {" "}

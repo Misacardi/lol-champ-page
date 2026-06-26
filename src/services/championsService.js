@@ -5,7 +5,19 @@ const LOCALE = "en_US";
 
 let currentVersion;
 
-const removeHtmlTags = (text = "") => text.replace(/<[^>]*>/g, "");
+const removeHtmlTags = (text = "") =>
+  text
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<\/(stats|attention|maintext|passive|active|rules|li|p)>/gi, " ")
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
 
 const getSpellValues = (values = []) =>
   values.filter((value) => value !== null && value !== undefined);
@@ -77,6 +89,15 @@ const itemCategoryOrder = [
   "consumable",
   "other",
 ];
+
+const getItemStatBonuses = (stats = {}) => ({
+  health: stats.FlatHPPoolMod || 0,
+  attackDamage: stats.FlatPhysicalDamageMod || 0,
+  abilityPower: stats.FlatMagicDamageMod || 0,
+  armor: stats.FlatArmorMod || 0,
+  magicResist: stats.FlatSpellBlockMod || 0,
+  attackSpeedPercent: (stats.PercentAttackSpeedMod || 0) * 100,
+});
 
 const useChampionService = () => {
   const { request } = useHttp();
@@ -192,6 +213,7 @@ const useChampionService = () => {
         description: removeHtmlTags(item.description),
         summary: item.plaintext || removeHtmlTags(item.description),
         tags: item.tags || [],
+        bonuses: getItemStatBonuses(item.stats),
         category: getItemCategory(item.tags || []),
         price: item.gold?.total || 0,
         sellPrice: item.gold?.sell || 0,
