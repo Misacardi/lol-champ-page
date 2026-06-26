@@ -3,6 +3,8 @@ import ChampionList from "../championList";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import SingleChampion from "../singleChampion";
+import ChampionCompare from "../championCompare";
+import ItemsPage from "../itemsPage";
 import Footer from "../footer";
 import "./app.css";
 
@@ -18,6 +20,8 @@ const App = () => {
           <Route path="/" element={<ChampionList />}>
             {" "}
           </Route>
+          <Route path="/items" element={<ItemsPage />} />
+          <Route path="/compare" element={<ChampionCompare />} />
           <Route path="/:heroId" element={<SingleChampion />}>
             {" "}
           </Route>

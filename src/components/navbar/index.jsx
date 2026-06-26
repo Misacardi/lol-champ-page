@@ -31,13 +31,35 @@ const Navbar = () => {
             </span>
           </NavLink>
 
-          <button
-            onClick={() => dispatch(change())}
-            className="button__theme"
-            aria-label={darkTheme ? "Switch to light theme" : "Switch to dark theme"}
-          >
-            <img src={setIcon} alt="" />
-          </button>
+          <div className="nav__actions">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav__link is-active" : "nav__link"
+              }
+              to="/items"
+            >
+              Items
+            </NavLink>
+
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "nav__link is-active" : "nav__link"
+              }
+              to="/compare"
+            >
+              Compare
+            </NavLink>
+
+            <button
+              onClick={() => dispatch(change())}
+              className="button__theme"
+              aria-label={
+                darkTheme ? "Switch to light theme" : "Switch to dark theme"
+              }
+            >
+              <img src={setIcon} alt="" />
+            </button>
+          </div>
         </div>
       </div>
     </nav>

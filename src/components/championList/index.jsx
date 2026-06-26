@@ -9,7 +9,6 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useChampionService from "../../services/championsService";
-import Spinner from "../spinner";
 import "./championList.css";
 
 const filterButtons = [
@@ -21,6 +20,20 @@ const filterButtons = [
   "support",
   "tank",
 ];
+
+const ChampionCardSkeleton = () => (
+  <article className="card card--skeleton" aria-hidden="true">
+    <div className="card-skeleton__image skeleton-shimmer" />
+    <div className="card-skeleton__content">
+      <div className="card-skeleton__roles">
+        <span className="skeleton-shimmer" />
+        <span className="skeleton-shimmer" />
+      </div>
+      <span className="card-skeleton__title skeleton-shimmer" />
+      <span className="card-skeleton__link skeleton-shimmer" />
+    </div>
+  </article>
+);
 
 const ChampionList = () => {
   const { getChampionList } = useChampionService();
@@ -63,6 +76,10 @@ const ChampionList = () => {
       <ChampionListItem name={name} img={img} id={id} roles={roles} />
     </CSSTransition>
   ));
+  const isInitialLoading = loadingStatus && champions.length === 0;
+  const skeletonCards = Array.from({ length: 12 }, (_, index) => (
+    <ChampionCardSkeleton key={index} />
+  ));
 
   return (
     <div className="championlist">
@@ -96,7 +113,7 @@ const ChampionList = () => {
               <span>Champions</span>
             </div>
             <div>
-              <strong>7</strong>
+              <strong>6</strong>
               <span>Playstyles</span>
             </div>
             <div>
@@ -115,8 +132,11 @@ const ChampionList = () => {
               <h2>Choose your champion</h2>
             </div>
             <p>
-              {filteredChampions.length}{" "}
-              {filteredChampions.length === 1 ? "champion" : "champions"}
+              {isInitialLoading
+                ? "Loading roster"
+                : `${filteredChampions.length} ${
+                    filteredChampions.length === 1 ? "champion" : "champions"
+                  }`}
             </p>
           </div>
 
@@ -153,8 +173,11 @@ const ChampionList = () => {
             </div>
           </div>
 
-          <TransitionGroup className="cards">{cards}</TransitionGroup>
-          {loadingStatus && <Spinner />}
+          {isInitialLoading ? (
+            <div className="cards cards--skeleton">{skeletonCards}</div>
+          ) : (
+            <TransitionGroup className="cards">{cards}</TransitionGroup>
+          )}
           {error && <div className="championlist__error">{error}</div>}
           {!loadingStatus && !error && cards.length === 0 && (
             <div className="championlist__empty">

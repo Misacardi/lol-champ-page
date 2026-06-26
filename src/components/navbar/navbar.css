@@ -47,6 +47,43 @@
   letter-spacing: 0.2em;
 }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav__link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 180ms;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  background: #d7b667;
+  transform: scaleX(0);
+  transition: transform 180ms;
+}
+
+.nav__link:hover,
+.nav__link.is-active {
+  color: #d7b667;
+}
+
+.nav__link.is-active::after {
+  transform: scaleX(1);
+}
+
 .button__theme {
   width: 42px;
   height: 42px;
@@ -71,7 +108,8 @@
 }
 
 .button__theme:focus-visible,
-.nav__brand:focus-visible {
+.nav__brand:focus-visible,
+.nav__link:focus-visible {
   outline: 2px solid #d7b667;
   outline-offset: 4px;
 }
@@ -90,5 +128,13 @@
 
   .nav__brand > span {
     font-size: 16px;
+  }
+
+  .nav__actions {
+    gap: 12px;
+  }
+
+  .nav__link {
+    font-size: 8px;
   }
 }

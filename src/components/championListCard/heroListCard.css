@@ -129,6 +129,69 @@
   outline-offset: 4px;
 }
 
+.card--skeleton {
+  pointer-events: none;
+}
+
+.card--skeleton::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 34%, rgba(4, 11, 17, 0.82)),
+    radial-gradient(circle at 70% 18%, rgba(215, 182, 103, 0.16), transparent 34%),
+    #0b1720;
+}
+
+.card-skeleton__image {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  opacity: 0.48;
+}
+
+.card-skeleton__content {
+  position: absolute;
+  z-index: 2;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+}
+
+.card-skeleton__roles {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.card-skeleton__roles span {
+  width: 58px;
+  height: 9px;
+  border-radius: 999px;
+}
+
+.card-skeleton__roles span:last-child {
+  width: 74px;
+}
+
+.card-skeleton__title,
+.card-skeleton__link {
+  display: block;
+  border-radius: 999px;
+}
+
+.card-skeleton__title {
+  width: 72%;
+  height: 34px;
+}
+
+.card-skeleton__link {
+  width: 44%;
+  height: 10px;
+  margin-top: 22px;
+}
+
 @media (max-width: 800px) {
   .card__content {
     padding: 22px 18px 18px;
@@ -167,6 +230,34 @@
   }
 
   .card__link {
+    display: none;
+  }
+
+  .card-skeleton__content {
+    right: 13px;
+    bottom: 14px;
+    left: 13px;
+  }
+
+  .card-skeleton__roles {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .card-skeleton__roles span {
+    width: 42px;
+    height: 7px;
+  }
+
+  .card-skeleton__roles span:last-child {
+    width: 54px;
+  }
+
+  .card-skeleton__title {
+    height: 24px;
+  }
+
+  .card-skeleton__link {
     display: none;
   }
 }

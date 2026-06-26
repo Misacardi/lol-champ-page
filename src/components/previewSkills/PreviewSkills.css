@@ -1,200 +1,407 @@
-/* abilities */
-
 .abilities {
-  background-color: rgb(0, 9, 19);
-  min-height: 716px;
-  display: flex;
-  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 76% 45%, rgba(28, 126, 155, 0.12), transparent 30%),
+    #061019;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .abilities__inner {
-  display: flex;
+  min-height: 820px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1.2fr);
   align-items: center;
-  gap: 6vw;
+  gap: clamp(55px, 8vw, 120px);
+  padding: 110px 40px;
 }
 
-.abilities__background {
+.abilities__copy {
+  max-width: 520px;
+}
+
+.abilities__eyebrow {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: #d7b667;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.abilities__eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+}
+
+.preview__title {
+  margin-top: 16px;
+  color: #f7f4ec;
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(58px, 6vw, 88px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.abilities__intro {
+  max-width: 450px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 13px;
+  line-height: 1.75;
 }
 
 .preview__list {
   display: flex;
-  column-gap: 25px;
-}
-
-.preview__title {
-  color: #ffff;
-  font-size: 65px;
-  letter-spacing: 2px;
-  font-style: italic;
-  font-weight: 700;
-  margin-left: 10px;
-}
-
-.preview__button {
-  position: relative;
-  margin-top: 30px;
-}
-
-.preview__button:hover .circle {
-  transition: 300ms;
-  background-color: rgb(208, 168, 92);
-}
-
-.active-skils {
-  border: 1.5px solid rgb(208, 168, 92);
-  transform: translateY(-15px);
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 38px;
 }
 
 .preview__img {
-  transition: 500ms;
-  max-width: 70px;
-  max-height: 75px;
+  position: relative;
+  width: 68px;
+  height: 68px;
   padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 200ms, transform 200ms, background-color 200ms;
 }
 
-.active-skils .circle {
-  background-color: rgb(208, 168, 92);
+.preview__img:hover {
+  border-color: rgba(215, 182, 103, 0.65);
 }
 
-.preview__img button {
-  width: 60px;
-  height: 60px;
+.preview__img.active-skils {
+  border-color: #d7b667;
+  background: rgba(215, 182, 103, 0.08);
+  transform: translateY(-7px);
 }
 
-.circle {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  background-color: rgb(57, 64, 72);
-  border-radius: 50%;
-  bottom: -25px;
-  left: 44%;
-}
-
-.abilities__desc {
-  min-height: 260px;
-  color: #ffff;
-  max-width: 450px;
-  margin-top: 40px;
-  padding: 15px;
-}
-
-.abilities__desc span {
-  color: rgb(126, 126, 126);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.abilities__desc h2 {
-  font-size: 15px;
-  letter-spacing: 2px;
-  font-weight: 700;
-}
-
-.abilities__desc div {
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-/* video */
-
-.abilities__inner-video {
-  width: 800px;
-  height: 450px;
-  margin-top: 100px;
-  overflow: hidden;
-  outline: 1px solid rgba(255, 255, 255, 0.2);
-  outline-offset: -12px;
-}
-
-.abilities__inner-video video {
+.preview__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.abilities__video-placeholder {
+.preview__img span {
+  position: absolute;
+  right: -5px;
+  bottom: -8px;
+  min-width: 24px;
+  padding: 3px 5px;
+  color: #071019;
+  background: #d7b667;
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.abilities__desc {
+  min-height: 150px;
+  margin-top: 40px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(215, 182, 103, 0.5);
+}
+
+.abilities__desc > span {
+  color: #d7b667;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.abilities__name {
+  margin-top: 7px;
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.abilities__desc p {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.ability-progressions {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.ability-progression {
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ability-progression__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ability-progression__heading > span {
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ability-progression__heading small {
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.ability-progression__values {
+  display: grid;
+  grid-template-columns: repeat(var(--value-count), 1fr);
+  gap: 6px;
+  margin-top: 13px;
+}
+
+.ability-progression__values div {
+  min-width: 0;
+  padding: 8px 4px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ability-progression__values span,
+.ability-progression__values strong {
+  display: block;
+}
+
+.ability-progression__values span {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 7px;
+}
+
+.ability-progression__values strong {
+  margin-top: 2px;
+  color: #d7b667;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.ability-dossier {
+  position: relative;
+  min-height: 500px;
+  padding: 54px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.035), transparent),
+    #091722;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.28);
+}
+
+.ability-dossier::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.abilities__media-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(30, 174, 208, 0.18);
+  filter: blur(70px);
+}
+
+.ability-dossier__label {
+  position: relative;
+  display: block;
+  color: #d7b667;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.ability-dossier__identity {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ability-dossier__identity img {
+  width: 104px;
+  height: 104px;
+  padding: 7px;
+  object-fit: cover;
+  border: 1px solid #d7b667;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.34);
+}
+
+.ability-dossier__identity small,
+.ability-dossier__identity span {
+  display: block;
+}
+
+.ability-dossier__identity small {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.ability-dossier__identity span {
+  max-width: 390px;
+  margin-top: 7px;
+  color: #fff;
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(25px, 3vw, 40px);
+  letter-spacing: -0.025em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.ability-metrics {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ability-metrics > div {
+  min-height: 102px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 24px;
-  color: rgba(255, 255, 255, 0.7);
-  background:
-    radial-gradient(circle, rgba(208, 168, 92, 0.16), transparent 45%),
-    rgb(5, 16, 27);
+  padding: 18px 22px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.abilities__video-placeholder img {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border: 1px solid rgb(208, 168, 92);
-  padding: 8px;
-}
-
-.abilities__video-placeholder span {
+.ability-metrics dt {
+  color: rgba(255, 255, 255, 0.36);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 12px;
 }
 
-@media (max-width: 1024px) {
-  .abilities__inner-video {
-    padding: 20px;
-    outline-offset: -28px;
-  }
+.ability-metrics dd {
+  margin: 7px 0 0;
+  color: #d7b667;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  line-height: 1.2;
+}
 
+.ability-dossier__passive {
+  position: relative;
+  margin-top: 30px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ability-dossier__passive strong {
+  color: #d7b667;
+  font-family: "Roboto Slab", serif;
+  font-size: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.ability-dossier__passive p,
+.ability-dossier__note p {
+  margin-top: 9px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.ability-dossier__note {
+  position: relative;
+  margin-top: 26px;
+  padding-left: 16px;
+  border-left: 1px solid rgba(215, 182, 103, 0.5);
+}
+
+.ability-dossier__note > span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
   .abilities__inner {
-    position: relative;
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
+    padding-inline: 22px;
   }
 
-  .preview__title {
-    position: absolute;
-    font-size: 30px;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%);
+  .abilities__copy {
+    max-width: 680px;
   }
 
-  .preview__list {
-    padding: 10px;
-    column-gap: 5%;
-  }
-
-  .abilities {
-    padding: 50px 0;
+  .ability-dossier {
+    min-height: 420px;
   }
 }
 
-@media (max-width: 768px) {
-  .abilities__inner-video {
-    width: 600px;
-    height: 400px;
+@media (max-width: 520px) {
+  .abilities__inner {
+    min-height: auto;
+    gap: 52px;
+    padding: 80px 16px;
   }
-}
 
-@media (max-width: 537px) {
-  .abilities__inner-video {
-    width: 400px;
-    height: 250px;
+  .preview__img {
+    width: 56px;
+    height: 56px;
   }
-}
 
-@media (max-width: 375px) {
-  .abilities__inner-video {
-    width: 370px;
-    height: 250px;
+  .ability-dossier {
+    min-height: 0;
+    padding: 38px 28px;
   }
-}
 
-@media (max-width: 425px) {
-  .preview__title {
-    top: 0;
+  .ability-dossier::before {
+    inset: 10px;
+  }
+
+  .ability-dossier__identity {
+    gap: 16px;
+  }
+
+  .ability-dossier__identity img {
+    width: 78px;
+    height: 78px;
+  }
+
+  .ability-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .ability-metrics > div {
+    min-height: 84px;
   }
 }
